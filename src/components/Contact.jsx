@@ -1,4 +1,4 @@
-import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, InstagramIcon, FacebookIcon } from "./Icons";
+import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, InstagramIcon, YoutubeIcon } from "./Icons";
 import Reveal from "./Reveal";
 
 export default function Contact() {
@@ -43,25 +43,34 @@ export default function Contact() {
               <ClockIcon className="w-6 h-6 text-brand-red shrink-0 mt-0.5" />
               <div>
                 <p className="font-display font-bold">Çalışma Saatleri</p>
-                <p className="text-sm text-brand-cream/60 mt-1">Her gün 09:00 – 22:00</p>
+                <p className="text-sm text-brand-cream/60 mt-1">Her gün 10:45 – 02:00</p>
               </div>
             </div>
 
-            <div className="flex items-center gap-3 pt-2">
-              <a
-                href="#"
-                aria-label="Instagram"
-                className="w-11 h-11 rounded-full bg-white/5 hover:bg-brand-red flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <InstagramIcon className="w-5 h-5" />
-              </a>
-              <a
-                href="#"
-                aria-label="Facebook"
-                className="w-11 h-11 rounded-full bg-white/5 hover:bg-brand-red flex items-center justify-center transition-all duration-300 hover:scale-110"
-              >
-                <FacebookIcon className="w-5 h-5" />
-              </a>
+            <div className="pt-2">
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.instagram.com/meydanpilavcisi35?igsh=MWhqbzZrYTBxdDBxMQ%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-11 h-11 rounded-full bg-white/5 hover:bg-brand-red flex items-center justify-center transition-all duration-300 hover:scale-110"
+                >
+                  <InstagramIcon className="w-5 h-5" />
+                </a>
+                <a
+                  href="https://www.youtube.com/@meydanpilavcisibornova"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-11 h-11 rounded-full bg-white/5 hover:bg-brand-red flex items-center justify-center transition-all duration-300 hover:scale-110"
+                >
+                  <YoutubeIcon className="w-5 h-5" />
+                </a>
+              </div>
+              <p className="text-xs text-brand-cream/50 mt-3">
+                YouTube'da eğlenceli videolarımızı, Instagram'da güncel paylaşımlarımızı kaçırmayın!
+              </p>
             </div>
           </Reveal>
 

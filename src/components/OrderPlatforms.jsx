@@ -11,13 +11,13 @@ const PLATFORMS = [
   {
     name: "Yemeksepeti",
     desc: "Yemeksepeti'nden sipariş verin",
-    href: "https://www.yemeksepeti.com",
+    href: "https://www.yemeksepeti.com/restaurant/c3gb/kucukpark-meydan-pilavcisi",
     bg: "bg-[#FA0050]",
   },
   {
     name: "Trendyol Yemek",
     desc: "Trendyol Yemek'ten sipariş verin",
-    href: "https://yemek.trendyol.com",
+    href: "https://tgoyemek.com/restoranlar/383343",
     bg: "bg-[#F27A1A]",
   },
 ];
@@ -62,7 +62,7 @@ export default function OrderPlatforms() {
         </div>
 
         <p className="text-center text-xs text-brand-black/40 mt-6">
-          Platform bağlantıları güncellendiğinde işletmenize özel sipariş linkleriyle değiştirilecektir.
+          Getir sipariş linkimiz eklendiğinde bu alan güncellenecektir.
         </p>
       </div>
 
