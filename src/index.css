@@ -1,0 +1,149 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Poppins", "Segoe UI", sans-serif;
+  --font-body: "system-ui", "Segoe UI", sans-serif;
+
+  --color-brand-red: #c8302a;
+  --color-brand-red-dark: #9e2019;
+  --color-brand-black: #1a1614;
+  --color-brand-charcoal: #262019;
+  --color-brand-cream: #fbf5ea;
+  --color-brand-cream-2: #f4ead7;
+  --color-brand-gold: #d9a441;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-black);
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: var(--color-brand-red);
+  color: white;
+}
+
+.pattern-dots {
+  background-image: radial-gradient(currentColor 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+/* ==========================================================
+   Animasyonlar — sadece transform/opacity (GPU dostu, akıcı)
+   ========================================================== */
+
+/* Scroll ile ortaya çıkış (IntersectionObserver + Reveal bileşeni) */
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right {
+  opacity: 0;
+  transform: translateX(22px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Kase hafif süzülme */
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.animate-bob {
+  animation: bob 4.2s ease-in-out infinite;
+}
+
+/* Pilavdan yükselen buhar */
+@keyframes steamRise {
+  0%   { transform: translateY(0) scaleY(1); opacity: 0.85; }
+  55%  { transform: translateY(-11px) scaleY(1.15); opacity: 0.35; }
+  100% { transform: translateY(-22px) scaleY(1); opacity: 0; }
+}
+.steam-wisp {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: steamRise 3s ease-in-out infinite;
+}
+
+/* Havada süzülen pirinç taneleri */
+@keyframes grainFloat {
+  0%   { transform: translateY(0) rotate(-8deg); opacity: 0; }
+  12%  { opacity: 0.75; }
+  85%  { opacity: 0.45; }
+  100% { transform: translateY(-220px) rotate(18deg); opacity: 0; }
+}
+.grain-float {
+  animation-name: grainFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+/* İkon/rozet ufak titreşim (hover) */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(0deg) scale(1); }
+  25% { transform: rotate(-8deg) scale(1.05); }
+  75% { transform: rotate(8deg) scale(1.05); }
+}
+.group:hover .hover-wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+/* Pırıltı */
+@keyframes twinkle {
+  0%, 100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  50% { transform: scale(1.3) rotate(18deg); opacity: 0.55; }
+}
+.animate-twinkle {
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+
+/* Ekran dışına çıkınca animasyonları duraklat (performans için) */
+.pause-anim,
+.pause-anim * {
+  animation-play-state: paused !important;
+}
+
+/* Erişilebilirlik / performans: hareket azaltma tercihine saygı */
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .animate-bob,
+  .steam-wisp,
+  .grain-float,
+  .animate-twinkle,
+  .group:hover .hover-wiggle {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
